@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        .formContainer {
+            /* border: 1px solid; */
+            width: 100%;
+            /* height: 70vh; */
+            border-bottom: 1px solid lightcoral;
+            border-top: 1px solid lightcoral;
+        }
+
+        .box {
+            border: 2px solid black;
+            width: 30%;
+            /* height: 50vh; */
+            display: block;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 5px;
+            border-color: lightcoral;
+        }
+
+        .googleLogin {
+            border: 2px solid blue;
+            width: 100%;
+            /* height: 40px; */
+            background-color: blue;
+            border-radius: 5px;
+            /* padding: 3px; */
+        }
+
+        .googleLogin .left {
+            float: left;
+            width: 18%;
+            padding: 3px;
+            margin-left: 5px;
+            margin: 3px;
+        }
+
+        .googleLogin .left img {
+            width: 100%;
+            max-height: 45px;
+            line-height: 35px;
+        }
+
+        .googleLogin .right {
+            float: right;
+            width: 80%;
+            font-size: 30px;
+            color: white;
+            padding: 3px;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .googleLogin::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        h1.or {
+            font-family: sans-serif;
+            margin: 10px auto;
+            text-align: center;
+            font-size: 16px;
+            /* max-width: 600px; */
+            position: relative;
+        }
+
+        h1.or:before {
+            content: "";
+            display: block;
+            width: 40%;
+            height: 1px;
+            background: #000;
+            left: 0;
+            top: 50%;
+            position: absolute;
+        }
+
+        h1.or:after {
+            content: "";
+            display: block;
+            width: 40%;
+            height: 1px;
+            background: #000;
+            right: 0;
+            top: 50%;
+            position: absolute;
+        }
+
+        h1.login {
+            text-align: center;
+            padding: 10px;
+            letter-spacing: 2px;
+        }
+
+
+        form label {
+            display: block;
+            padding: 10px;
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+
+        form input {
+            width: 100%;
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        form #email {
+            margin-bottom: 10px;
+        }
+
+        .footer4 {
+            /* border: 1px solid; */
+            padding: 30px 10%;
+            width: 100%;
+            background-color: rgba(95, 158, 160, 0.11);
+            /* height: 100vh; */
+            display: flex;
+            flex-direction: row;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .footer41 {
+            width: 60%;
+        }
+
+        .footer41 p {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .footer41 a {
+            padding: 10px;
+        }
+
+        .footer42 {
+            width: 20%;
+        }
+
+        .footer421 {
+            /* border: 1px solid; */
+            width: 30%;
+            float: left;
+            padding: 10px;
+        }
+
+        .footer422 {
+            /* border: 1px solid; */
+            width: 70%;
+            float: left;
+            padding: 10px 0;
+        }
+
+        .footer422 p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <a href="../index.html"><img src="images/logo.png"></a>
+        </div>
+        <div class="formContainer">
+            <div class="box">
+                <a href="#">
+                    <div class="googleLogin">
+                        <div class="left">
+                            <img src="images/google.png" alt="googleLogo">
+                        </div>
+                        <div class="right">
+                            <p>Login with Google</p>
+                        </div>
+                    </div>
+                </a>
+                <h1 class="or">OR</h1>
+                <h1 class="login">Login Here</h1>
+                <form action="/getstarted1" class="form" method="POST">
+                    <label for="email">Enter your Email *</label>
+                    <input type="email" id="email" placeholder="Enter Email" required name="emailid">
+                    <label for="pwd">Enter your Password *</label>
+                    <input type="password" id="pwd" placeholder="Enter Password" required name="password">
+                    <p class="mt-1">* All fields are Mandatory</p>
+                    <p style="color: red;">{{invalid}}</p>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer4">
+            <div class="footer41">
+                <p>ClearTax is a product by Defmacro Software Pvt. Ltd.</p>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Need Help</a>
+            </div>
+            <div class="footer42">
+                <div class="footer421">
+                    <img src="images/iso-logo.png" alt="">
+                </div>
+                <div class="footer422">
+                    <p>ISO 27001</p>
+                    <p>Data Center</p>
+                </div>
+            </div>
+            <div class="footer42">
+                <div class="footer421">
+                    <img src="images/ssl.png" alt="">
+                </div>
+                <div class="footer422">
+                    <p>SSL Certified Site</p>
+                    <p>128-bit Encryption</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
